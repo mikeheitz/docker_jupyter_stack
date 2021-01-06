@@ -60,5 +60,4 @@ xlrd~=1.2
 zipp==3.1.0
 numpy==1.18.2
 pandas==0.25.3
-# plotly==4.14.1
 cufflinks==0.17.0

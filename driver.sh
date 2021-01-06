@@ -74,16 +74,44 @@ build | -b | --build)
   docker build --tag $CONTAINER_TAG .
   ;;
 
-jupyter | -j | --jupyter)
+# jupyter | -j | --jupyter)
+#
+#  echo
+#  echo "Starting the Jupyter server."
+#  docker run \
+#    --publish 8888:8888 \
+#    --volume "$(pwd)"/notebooks:/workspace/notebooks \
+#    --detach $CONTAINER_TAG jupyter
+#  echo "Go to http://localhost:8888/"
+#  ;;
+
+jupyter | -j)
 
   echo
+  echo "Running shell."
+  echo "Environment variables."
+  echo "SNOWFLAKE_USER:" $SNOWFLAKE_USER
+  # echo "S3_STAGE:" $S3_STAGE
+  echo "SNOWFLAKE_WAREHOUSE:" $SNOWFLAKE_WAREHOUSE
+  echo "SNOWFLAKE_DATABASE:" $SNOWFLAKE_DATABASE
+  echo "SNOWFLAKE_SCHEMA:" $SNOWFLAKE_SCHEMA
+  echo "SNOWFLAKE_ROLE:" $SNOWFLAKE_ROLE
+  echo "AWS_ACCESS_KEY_ID:" $AWS_ACCESS_KEY_ID
+
   echo "Starting the Jupyter server."
-  docker run \
-    --publish 8888:8888 \
+  echo "Control c to stop"
+  docker run --publish 8888:8888 \
     --volume "$(pwd)"/notebooks:/workspace/notebooks \
+    --env SNOWFLAKE_USER=$SNOWFLAKE_USER \
+    --env SNOWFLAKE_PASSWORD=$SNOWFLAKE_PASSWORD \
+    --env SNOWFLAKE_WAREHOUSE=$SNOWFLAKE_WAREHOUSE \
+    --env SNOWFLAKE_DATABASE=$SNOWFLAKE_DATABASE \
+    --env SNOWFLAKE_SCHEMA=$SNOWFLAKE_SCHEMA \
+    --env SNOWFLAKE_ROLE=$SNOWFLAKE_ROLE \
+    --env AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
+    --env AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
     --detach $CONTAINER_TAG jupyter
-  echo "Go to http://localhost:8888/."
-  ;;
+  echo "Go to http://localhost:8888/"  ;;
 
 stop | -s | --stop)
 

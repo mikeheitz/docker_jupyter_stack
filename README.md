@@ -3,9 +3,11 @@ This Docker Container Stack includes everything you need to run Jupyter Notebook
 
 ## Background
 
-We work in Docker, and we'd like to see what you can do using it.
+We wanted to setup a stable, consistent environment for our Analysts to dig into data, create on the fly visualizations, and use Jupyter Notebooks.
 
-Please read all of the following.
+##  Cool Libraries included:
+- Plotly  (https://plotly.com/python/pandas-backend/)  - Plotting with Pandas Power
+- Cufflinks (https://github.com/santosjorge/cufflinks)  - Creating Interactive Graphs and Plots
 
 ## Technical Requirements
 
@@ -59,6 +61,6 @@ bash driver.sh hello-world
 
 After you do, you should see something like this at the command line.
 ```
-Running scripts/hello_world.py in the forecasting_take_home container.
+Running scripts/hello_world.py in the ia_replen_jupyter container.
 [0, 1, 2, 3, 4]
 ```
