@@ -61,3 +61,4 @@ zipp==3.1.0
 numpy==1.18.2
 pandas==0.25.3
 cufflinks==0.17.0
+scikit-learn==0.24.0
