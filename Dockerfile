@@ -8,13 +8,13 @@ RUN echo 'Installing Python packages.'
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
-RUN echo 'Adding usf_helpers and installing'
-COPY packages/usf_helpers-0.1.0.tar.gz /
-RUN pip install /usf_helpers-0.1.0.tar.gz
+# RUN echo 'Adding usf_helpers and installing'
+# COPY packages/usf_helpers-0.1.0.tar.gz /
+# RUN pip install /usf_helpers-0.1.0.tar.gz
 
 RUN echo 'Adding notebooks and scripts directories and docker-entrypoint.sh.'
 ADD notebooks/ /workspace/notebooks
-ADD scripts/ /workspace/scripts
+ADD scripts/ /workspace/src
 ADD docker-entrypoint.sh /workspace/docker-entrypoint.sh
 RUN chmod +x /workspace/docker-entrypoint.sh
 

@@ -1,5 +1,5 @@
-# IA Replen Jupyter Stack
-This Docker Container Stack includes everything you need to run Jupyter Notebooks, import USF Helpers library to connect to Snowflake, as well as libraries like Pandas, Numpy, Matplotlib, etc... for doing data analysis and visualizations.
+# Data Science Jupyter Stack
+This Docker Container Stack includes everything you need to run Jupyter Notebooks as well as libraries like Pandas, Numpy, Matplotlib, etc... for doing data analysis visualizations and some data science-y stuff.
 
 ## Background
 
@@ -61,6 +61,6 @@ bash driver.sh hello-world
 
 After you do, you should see something like this at the command line.
 ```
-Running scripts/hello_world.py in the ia_replen_jupyter container.
+Running scripts/hello_world.py in the ds_jupyter_stack container.
 [0, 1, 2, 3, 4]
 ```
