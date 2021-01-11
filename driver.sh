@@ -46,7 +46,7 @@ build,-b,--build:                       Build the Docker container.
 test,-t,--test:                         Run tests.
 jupyter,-j,--jupyter:                   Start the Jupyter server in the container.
 stop,-s,--stop:                         Stop the container.
-hello-world,-h,--hello:                 Run scripts/hello_world.py.
+hello-world,-h,--hello:                 Run src/hello_world.py.
 shell,-sh,--shell:                      Open a shell in the container."
   exit 1
 fi
@@ -123,8 +123,8 @@ stop | -s | --stop)
 hello-world | -h | --hello)
 
   echo
-  echo "Running scripts/hello_world.py in the $CONTAINER_TAG container."
-  docker run $CONTAINER_TAG python scripts/hello_world.py
+  echo "Running src/hello_world.py in the $CONTAINER_TAG container."
+  docker run $CONTAINER_TAG python src/hello_world.py
   ;;
 
 shell | -sh | --shell)
